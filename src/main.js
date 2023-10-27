@@ -1,18 +1,37 @@
 const { invoke } = window.__TAURI__.tauri;
 
-let greetInputEl;
-let greetMsgEl;
+let mathInputEl;
+let mathCorrectEl;
+let mathQuestionEl;
+let rangeEl;
 
-async function greet() {
+async function submitAnswer() {
   // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-  greetMsgEl.textContent = await invoke("greet", { name: greetInputEl.value });
+  let answers = await invoke("get_answer", {
+    answer: mathInputEl.value,
+    question: mathQuestionEl.textContent,
+  });
+  mathCorrectEl.textContent = answers[0];
+  if (answers[1]) {
+    newQuestion();
+  }
+}
+
+async function newQuestion() {
+  mathQuestionEl.textContent = await invoke("get_new_question", { range: rangeEl.value });
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  greetInputEl = document.querySelector("#greet-input");
-  greetMsgEl = document.querySelector("#greet-msg");
-  document.querySelector("#greet-form").addEventListener("submit", (e) => {
+  mathInputEl = document.querySelector("#math-input");
+  mathCorrectEl = document.querySelector("#math-correct");
+  mathQuestionEl = document.querySelector("#math-question");
+  rangeEl = document.querySelector("#range");
+  newQuestion();
+  document.querySelector("#math-form").addEventListener("submit", (e) => {
     e.preventDefault();
-    greet();
+    submitAnswer();
+  });
+  document.querySelector("#range").addEventListener("change", (e) => {
+    newQuestion();
   });
 });

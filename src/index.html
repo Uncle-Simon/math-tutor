@@ -6,41 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tauri App</title>
     <script type="module" src="/main.js" defer></script>
-    <style>
-      .logo.vanilla:hover {
-        filter: drop-shadow(0 0 2em #ffe21c);
-      }
-    </style>
   </head>
 
   <body>
     <div class="container">
-      <h1>Welcome to Tauri!</h1>
-
-      <div class="row">
-        <a href="https://tauri.app" target="_blank">
-          <img src="/assets/tauri.svg" class="logo tauri" alt="Tauri logo" />
-        </a>
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-          target="_blank"
-        >
-          <img
-            src="/assets/javascript.svg"
-            class="logo vanilla"
-            alt="JavaScript logo"
-          />
-        </a>
-      </div>
-
-      <p>Click on the Tauri logo to learn more about the framework</p>
-
-      <form class="row" id="greet-form">
-        <input id="greet-input" placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
+      <h1>Answer the question below:</h1>
+      <p>Number range: <input id="range" type="number" min="1" value="100"></p>
+      <p id="math-question">2+2</p>
+      <form class="row" id="math-form">
+        <input id="math-input" placeholder="Enter a your answer..." />
+        <button type="submit">Answer</button>
       </form>
 
-      <p id="greet-msg"></p>
+      <p id="math-correct"></p>
     </div>
   </body>
 </html>

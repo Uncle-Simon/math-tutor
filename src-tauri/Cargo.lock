@@ -636,6 +636,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "evalexpr"
+version = "11.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1e757e796a66b54d19fa26de38e75c3351eb7a3755c85d7d181a8c61437ff60c"
+
+[[package]]
 name = "fastrand"
 version = "2.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1515,6 +1521,8 @@ checksum = "2532096657941c2fea9c289d370a250971c689d4f143798ff67113ec042024a5"
 name = "math_tutor"
 version = "0.0.1"
 dependencies = [
+ "evalexpr",
+ "rand 0.8.5",
  "serde",
  "serde_json",
  "tauri",
