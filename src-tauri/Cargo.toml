@@ -1,7 +1,7 @@
 [package]
-name = "math-tutor"
-version = "0.0.0"
-description = "A Tauri App"
+name = "math_tutor"
+version = "0.0.1"
+description = "App to tutor you in math problems."
 authors = ["you"]
 license = ""
 repository = ""
