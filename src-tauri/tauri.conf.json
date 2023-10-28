@@ -28,7 +28,12 @@
         "icons/128x128@2x.png",
         "icons/icon.icns",
         "icons/icon.ico"
-      ]
+      ],
+      "windows": {
+        "certificateThumbprint": "f44d1b951e770d510d2e47449bdba2eb03bce43a",
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "http://timestamp.comodoca.com"
+}
     },
     "security": {
       "csp": null
