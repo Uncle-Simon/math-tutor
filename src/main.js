@@ -15,6 +15,8 @@ async function submitAnswer() {
   if (answers[1]) {
     newQuestion();
   }
+  mathInputEl.focus();
+  mathInputEl.select();
 }
 
 async function newQuestion() {
