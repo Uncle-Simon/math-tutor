@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
+    <title>Math Tutor</title>
     <script type="module" src="/main.js" defer></script>
   </head>
 
   <body>
     <div class="container">
       <h1>Answer the question below:</h1>
-      <p>Number range: <input id="range" type="number" min="2" value="100">
-      <p id="math-question">2.0 + 2.0</p>
+      <p><label for="range">Number range: </label><input id="range" type="number" min="2" value="100"></p>
+      <p><label for="positive">Positive numbers only: </label><input id="positive" type="checkbox"></p>
+      <h1 id="math-question">2.0 + 2.0</h1>
+
+      <hr class="solid">
 
       <form class="row" id="math-form" autocomplete="off">
-        <input id="math-input" placeholder="Enter a your answer..." />
+        <input id="math-input" placeholder="Enter your answer..." />
         <button type="submit">Answer</button>
       </form>
       
@@ -23,7 +26,7 @@
         <button id="skip">Skip</button>
       </p>
 
-      <p id="math-correct"></p>
+      <h2 id="math-correct"></h2>
     </div>
   </body>
 </html>

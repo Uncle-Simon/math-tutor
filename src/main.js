@@ -23,6 +23,7 @@ async function submitAnswer() {
 async function newQuestion() {
   mathQuestionEl.textContent = await invoke("get_new_question", {
     range: rangeEl.value,
+    positive: positiveEl.checked,
   });
 }
 
@@ -30,6 +31,7 @@ async function skipQuestion() {
   let answers = await invoke("skip_question", {
     question: mathQuestionEl.textContent,
     range: rangeEl.value,
+    positive: positiveEl.checked,
   });
   mathCorrectEl.textContent = "The correct answer was: " + answers[0];
   mathQuestionEl.textContent = answers[1];
@@ -53,6 +55,9 @@ window.addEventListener("DOMContentLoaded", () => {
     else this.value = 2;
   });
   document.querySelector("#range").addEventListener("change", (e) => {
+    newQuestion();
+  });
+  document.querySelector("#positive").addEventListener("change", (e) => {
     newQuestion();
   });
   document.querySelector("#skip").addEventListener("click", (e) => {

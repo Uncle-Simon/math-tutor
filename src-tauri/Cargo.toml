@@ -1,8 +1,8 @@
 [package]
 name = "math_tutor"
-version = "0.0.1"
+version = "0.0.4"
 description = "App to tutor you in math problems."
-authors = ["you"]
+authors = ["Uncle Simon"]
 license = ""
 repository = ""
 edition = "2021"
