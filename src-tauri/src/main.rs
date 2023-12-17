@@ -30,20 +30,20 @@ fn get_new_question(range: String, positive: bool) -> String {
 
     range_num = range_num.clamp(2, 1000000000);
 
-    let mut num1: i64 = rng.gen_range(-range_num, range_num);
-    let mut num2: i64 = rng.gen_range(-range_num, range_num);
+    let mut num1: i64 = rng.gen_range(-range_num..range_num);
+    let mut num2: i64 = rng.gen_range(-range_num..range_num);
 
     if positive {
-        num1 = rng.gen_range(0, range_num);
-        num2 = rng.gen_range(0, range_num);
+        num1 = rng.gen_range(0..range_num);
+        num2 = rng.gen_range(0..range_num);
     }
 
     let operand_array = ["+", "-", "*", "/"];
 
-    let operand: usize = rng.gen_range(0, operand_array.len());
+    let operand: usize = rng.gen_range(0..operand_array.len());
 
     if operand_array[operand] == "/" && num2 == 0 {
-        num2 += rng.gen_range(1, range_num);
+        num2 += rng.gen_range(1..range_num);
     }
 
     format!("{}.0 {} {}.0", num1, operand_array[operand], num2)
