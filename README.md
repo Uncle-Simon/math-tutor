@@ -54,7 +54,7 @@ npm install
 4. Build the Tauri application:
 
 ```bash
-npm run tauri:build
+npm run tauri build
 ```
 
 After following these steps, you should have a built version of the Math Tutor application on your local machine.
